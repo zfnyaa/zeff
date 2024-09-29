@@ -1,13 +1,110 @@
-h2 {
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: ##ff0000;
+    color: ##ffffff; 
+    line-height: 1.6;
+}
+
+header {
     text-align: center;
-    color: red;
+    padding: 20px;
 }
-table {
-    width: 100%;
-    border-collapse: collapse;
+
+h1 {
+    color: #2c3e50;
 }
-th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
+
+h2 {
+    color: #34495e;
+}
+
+section {
+    margin: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #2980b9;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+}
+
+iframe {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    margin: 40px 0;
+    font-style: italic;
+}
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('https://example.com/background.jpg'); /* Ganti dengan URL gambar background yang diinginkan */
+    background-size: cover; 
+    background-position: center; 
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+h2 {
+    color: #34495e;
+}
+
+section {
+    margin: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9); /* Background putih dengan transparansi */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #2980b9;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+}
+
+iframe {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    margin: 40px 0;
+    font-style: italic;
 }
