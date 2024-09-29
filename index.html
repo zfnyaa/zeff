@@ -3,66 +3,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan INKES</title>
-    <style>
-        body {
-            background-color: #ff0000;
-            color: #ffffff; 
-            line-height: 1.6;
-        }
-        nav {
-            background-color: #333;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-    </style>
+	<style>
+body {
+    background-color: ##ff0000;
+    color: ##ffffff; 
+    line-height: 1.6;
+}
+	</style>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
     <header>
         <h1 style="color: red;">Perpustakaan INKES</h1>
         <h2>Selamat Datang di Web Perpustakaan INKES</h2>
     </header>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#tentang">Tentang Kami</a>
-        <a href="#gambar">Gambar Perpustakaan</a>
-        <a href="#video">Video</a>
-        <a href="#formulir">Formulir</a>
-        <a href="#buku">Tabel Buku</a>
-        <a href="#kontak">Kontak</a>
-    </nav>
-
-    <main id="home">
-        <section id="tentang">
+    <main>
+        <SECTION>
             <h3>PERPUSTAKAAN INKES</h3>
             <p>Perkenalkan, saya Zefanya Rohdearmantuah Purba NIM 222201032. Ini adalah perpustakaan <i>homepage</i> <b>pertama</b> saya, karena saya baru belajar tentang cara membuat <b><i><a href="https://www.inkessumut.ac.id/">website perpustakaan INKES</a></i></b>. Selamat menjelajahi!</p>
-        </section>
+        </SECTION>
 
-        <section id="gambar">
+          <section>
             <h3>Gambar Gedung Perpustakaan INKES</h3>
             <center><img src="picture/WhatsApp Image 2024-09-13 at 13.21.05.jpeg" alt="Gedung Perpustakaan INKES"></center>
         </section>
 
-        <section id="video">
+        <section>
             <h3>Video Perpustakaan INKES</h3>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/FnMMoTzvWaw" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         </section>
+   <section>
+            <h3>Audio Perpustakaan</h3>
+     <h-4>BOB MARLEY - HOW MANY TIMES</h4>
+           <audio controls>
+        <source src="music/How_Many_Times_[_YouConvert.net_].mp3" alt="audio/mpeg">
+        </audio
+        </section> 
+    </main>  
+    <SECTION>
+	    <div class="content">
+                <h2>Kelebihan HTML5</h2>
+                <p>HTML5 memiliki sejumlah kelebihan dibandingkan dengan HTML:</p>
+                <ul>
+                    <li>Elemen semantik seperti &lt;header&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;section&gt;, dan &lt;footer&gt; memungkinkan markup yang lebih tepat.</li>
+                    <li>Elemen &lt;audio&gt; dan &lt;video&gt; memungkinkan penyisipan multimedia tanpa plugin tambahan.</li>
+                    <li>LocalStorage memungkinkan penyimpanan data lokal untuk menyimpan preferensi pengguna atau riwayat bacaan.</li>
+                    <li>Elemen &lt;canvas&gt; dan dukungan SVG untuk visualisasi data dan grafis interaktif.</li>
+                    <li>API geolocation untuk layanan berbasis lokasi.</li>
+                </ul>
+                <p>Penerapannya dalam web Perpustakaan INKES mencakup penggunaan elemen &lt;audio&gt; dan &lt;video&gt; untuk koleksi multimedia,</p>
+	<p>elemen semantik untuk struktur halaman yang lebih baik, penyimpanan lokal untuk data pengguna, dan elemen &lt;canvas&gt; atau SVG untuk visualisasi data.</p>
+		<h2>Kelebihan CSS</h2>
+		<P>CSS Memiliki beberapa kelebihan:</P>
+		    <li>Pisahkan Konten & Desain: CSS memisahkan tampilan dari struktur HTML.</li>
+		    <li>Efisiensi: Satu file CSS bisa digunakan untuk banyak halaman, mempercepat pengembangan.</li>
+		    <li>Desain Responsif: Mendukung tampilan yang baik di berbagai ukuran layar.</li>
+		    <li>Pengaturan Tampilan: CSS digunakan untuk mengatur tampilan dan tata letak elemen pada halaman web, termasuk warna, font, ukuran, dan spasi.</li>
+            </div
+</SECTION>
+</p>
+<SECTION>
+        <h2>Formulir Pemesanan Buku</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>Nama Lengkap:</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Nomor Anggota Perpustkaan:</td>
+                    <td><input type="password" /></td>
+                </tr>
+                <tr>
+                    <td>e-mail:</td>
+                    <td><input type="email" name="email" placeholder="@gmail.com" /></td>
+                </tr>
+                <tr>
+                    <td>Nomor Telepon:</td>
+                    <td><input type="number" name="Nomor Telepon" placeholder="+62..." /></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin:</td>
+                    <td>
+                        <label><input type="radio" name="jenis_kelamin" value="laki-laki" /> Laki-laki</label>
+                        <label><input type="radio" name="jenis_kelamin" value="perempuan" /> Perempuan</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">Detail Pemesanan</th>
+                </tr>
+                <tr>
+                    <td>Judul Buku Yang Dipesan:</td>
+                    <td><input type="text" name="Judul Buku" /></td>
+                </tr>
+                <tr>
+                    <td>Penulis Buku:</td>
+                    <td><input type="text" name="Penulis Buku" /></td>
+                </tr>
+                <tr>
+                    <td>Nomor ISBN:</td>
+                    <td><input type="number" name="Nomor ISBN" /></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Pemesanan:</td>
+                    <td><input type="date" name="Tanggal Pemesanan" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="submit" value="Kirim" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </SECTION>
 
-        <section id="formulir">
-            <h3>Formulir Pemesanan Buku</h3>
-            <form>
-               <tr>
+    <SECTION>
+        <h2>Formulir Perpanjangan Peminjaman Buku</h2>
+        <form>
+            <table>
+                <tr>
                     <td>Nama Lengkap:</td>
                     <td><input type="text" /></td>
                 </tr>
@@ -106,14 +165,13 @@
                     </td>
                 </tr>
             </table>
+        </form>
+    </SECTION>
 
-            </form>
-        </section>
-
-        <section id="buku">
-            <h2>Tabel Bahan Buku</h2>
-            <table>
-               <tr>
+    <SECTION>
+        <h2>Tabel Bahan Buku</h2>
+        <table>
+            <tr>
                 <th>No.</th>
                 <th>Judul Buku</th>
                 <th>Pengarang</th>
@@ -168,12 +226,55 @@
                 <td>-</td>
             </tr>
         </table>
-
+    
+    
+        <h2>Formulir Anggota Perpustakaan Program Studi</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>Nama Lengkap:</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Nomor Induk Mahasiswa (NIM):</td>
+                    <td><input type="text" name="NIM" /></td>
+                </tr>
+                <tr>
+                    <td>Program Studi:</td>
+                    <td>
+                        <select name="prodi">
+                            <option value="S1 Kesmas">Ilmu Perpustakaan</option>
+                            <option value="S1 Keperawatan">Informatika</option>
+                            <option value="Profesi Ners">Manajemen</option>
+                            <option value="S1 Kebidanan">Akuntansi</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fakultas:</td>
+                    <td><input type="text" name="fakultas" /></td>
+                </tr>
+                <tr>
+                    <td>Alamat Rumah:</td>
+                    <td><input type="text" name="alamat" /></td>
+                </tr>
+                <tr>
+                    <td>e-mail:</td>
+                    <td><input type="email" name="email" placeholder="@gmail.com" /></td>
+                </tr>
+                <tr>
+                    <td>Nomor Telepon:</td>
+                    <td><input type="number" name="telepon" placeholder="+62..." /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Daftar" />
+                    </td>
+                </tr>
             </table>
-        </section>
-    </main>
-
-    <footer id="kontak">
+        </form>
+        </SECTION>
+     <footer>
         <p>&copy; 2024 Perpustakaan INKES</p>
     </footer>
 </body>
