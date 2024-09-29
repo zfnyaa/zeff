@@ -4,12 +4,19 @@ body, h1, h2, h3, p {
     font-family: Arial, sans-serif;
 }
 
-.header-logo img {
-    width: 150px; /* Atur ukuran logo sesuai keinginan */
-    height: auto; /* Agar proporsi logo tetap terjaga */
-    position: absolute; /* Jika ingin mengatur posisi */
-    top: 20px;
-    right: 20px;
+.header-grid {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Logo akan disandingkan dengan teks */
+    align-items: center; /* Menyelaraskan vertikal */
+}
+
+.logo {
+    width: 50px; /* Sesuaikan ukuran logo */
+}
+
+.title {
+    font-size: 24px; /* Sesuaikan ukuran teks */
+    margin-left: 10px; /* Jarak antara logo dan teks */
 }
 
 header {
