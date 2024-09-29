@@ -106,26 +106,20 @@ iframe {
         width: 100%;
         border-collapse: collapse;
         margin: 20px 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     th, td {
-        border: 1px solid #2980b9;
-        padding: 12px;
+        border: 1px solid #ccc;
+        padding: 8px;
         text-align: left;
     }
 
     th {
-        background-color: #2980b9;
-        color: white;
-    }
-
-    tr:nth-child(even) {
         background-color: #f2f2f2;
     }
 
-    tr:hover {
-        background-color: #d1e8ff;
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
     }
 
     input[type="text"],
@@ -135,27 +129,21 @@ iframe {
     input[type="date"],
     select {
         width: 100%;
-        padding: 10px;
+        padding: 8px;
         border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box; 
+        border-radius: 4px;
+        box-sizing: border-box; /* Menghitung padding dan border dalam lebar total */
     }
 
     input[type="submit"] {
-        background-color: #2980b9;
+        background-color: #007BFF;
         color: white;
         padding: 10px 15px;
         border: none;
-        border-radius: 5px;
+        border-radius: 4px;
         cursor: pointer;
     }
 
     input[type="submit"]:hover {
-        background-color: #1a6d9b;
+        background-color: #0056b3;
     }
-
-footer {
-    text-align: center;
-    margin: 40px 0;
-    font-style: italic;
-}
