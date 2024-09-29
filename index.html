@@ -33,7 +33,6 @@
         <h2>Selamat Datang di Web Perpustakaan INKES</h2>
     </header>
 
-    <!-- Navigasi -->
     <nav>
         <a href="#home">Home</a>
         <a href="#tentang">Tentang Kami</a>
@@ -63,14 +62,113 @@
         <section id="formulir">
             <h3>Formulir Pemesanan Buku</h3>
             <form>
-                <!-- Isi formulir -->
+               <tr>
+                    <td>Nama Lengkap:</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Nomor Anggota Perpustakaan:</td>
+                    <td><input type="password" /></td>
+                </tr>
+                <tr>
+                    <td>e-mail:</td>
+                    <td><input type="email" name="email" placeholder="@gmail.com" /></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Detail Pemesanan Awal</th>
+                </tr>
+                <tr>
+                    <td>Judul Buku Yang Dipesan:</td>
+                    <td><input type="text" name="Judul Buku" /></td>
+                </tr>
+                <tr>
+                    <td>Penulis Buku:</td>
+                    <td><input type="text" name="Penulis Buku" /></td>
+                </tr>
+                <tr>
+                    <td>Nomor ISBN:</td>
+                    <td><input type="number" name="Nomor ISBN" /></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Perpanjangan Peminjaman Buku</th>
+                </tr>
+                <tr>
+                    <td>Tanggal Perpanjangan Peminjaman Buku:</td>
+                    <td><input type="date" name="Tanggal Perpanjang Peminjaman Buku" /></td>
+                </tr>
+                <tr>
+                    <td>Alasan Perpanjangan:</td>
+                    <td><input type="text" name="Alasan Perpanjangan" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="submit" value="Kirim" />
+                    </td>
+                </tr>
+            </table>
+
             </form>
         </section>
 
         <section id="buku">
             <h2>Tabel Bahan Buku</h2>
             <table>
-                <!-- Isi tabel -->
+               <tr>
+                <th>No.</th>
+                <th>Judul Buku</th>
+                <th>Pengarang</th>
+                <th>Penerbit</th>
+                <th>Tahun Terbit</th>
+                <th>Jumlah Halaman</th>
+                <th>ISBN</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>"ILMU BEDAH UNTUK PERAWAT"</td>
+                <td>M.A HENDERSON</td>
+                <td>YAYASAN ESSENTIA MEDICA</td>
+                <td>1997</td>
+                <td>290 </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>"Buku Saku Ilmu Penyakit Paru"</td>
+                <td>Halim Danususanto</td>
+                <td>Penerbit Buku Kedokteran</td>
+                <td>2010</td>
+                <td>335</td>
+                <td>978-979-044-256-6</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>"Urologic Disorders"</td>
+                <td>Mikel Gray</td>
+                <td>Morgan Kaufmann Publisher</td>
+                <td>2009</td>
+                <td>506</td>
+                <td>978-0-323-01912-5</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>"Buku Ajar Panthom Obstetri"</td>
+                <td>Ida Bagus Gede Manuba</td>
+                <td>Touchstone Book</td>
+                <td>2010</td>
+                <td>131</td>
+                <td>978-602-8200-88-2</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>"Endokrinologi Umum"</td>
+                <td>Turner</td>
+                <td>Airlangga University Pres</td>
+                <td>1988</td>
+                <td>746</td>
+                <td>-</td>
+            </tr>
+        </table>
+
             </table>
         </section>
     </main>
