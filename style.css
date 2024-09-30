@@ -51,14 +51,6 @@ body, h1, h2, h3, p {
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-image: url('https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg?auto=compress&cs=tinysrgb&w=600');
-    background-size: cover; 
-    background-position: center; 
-    color: #333;
-    line-height: 1.6;
-}
-
 header {
     text-align: center;
     padding: 20px;
