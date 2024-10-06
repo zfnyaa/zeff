@@ -384,7 +384,7 @@ const detailDiv = document.getElementById('book-detail');
 
 detailButtons.forEach(button => {
     button.addEventListener('click', function() {
-        const bookTitle = this.previousElementSibling.textContent.trim(); 
+        const bookTitle = this.previousElementSibling.textContent.trim().replace(/"/g, ''); 
 
         if (bookDetails[bookTitle]) {
             const { author, year, description } = bookDetails[bookTitle];
