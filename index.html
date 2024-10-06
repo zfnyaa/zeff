@@ -384,8 +384,8 @@ const detailDiv = document.getElementById('book-detail');
 
 detailButtons.forEach(button => {
     button.addEventListener('click', function() {
-        const bookTitle = this.previousElementSibling.textContent; 
-        
+        const bookTitle = this.previousElementSibling.textContent.trim(); 
+
         if (bookDetails[bookTitle]) {
             const { author, year, description } = bookDetails[bookTitle];
             detailDiv.innerHTML = `
@@ -399,6 +399,7 @@ detailButtons.forEach(button => {
             detailDiv.innerHTML = `<p>Detail untuk buku ini tidak tersedia.</p>`;
             detailDiv.style.display = 'block';
         }
+
         detailDiv.classList.add('show-detail');
     });
 });
