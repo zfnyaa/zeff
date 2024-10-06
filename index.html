@@ -80,6 +80,16 @@
             border-radius: 5px;
             background: #f9f9f9;
         }
+        #book-detail {
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        opacity: 0;
+        transform: translateY(20px);
+        }
+
+        #book-detail.show-detail {
+        opacity: 1;
+        transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -328,7 +338,7 @@
         </li>
     </ul>
     
-    <div id="book-detail"></div>
+    <div id="book-detail" style="display: none; margin-top: 20px; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);"></div>
 </section>
         
     </main> 
