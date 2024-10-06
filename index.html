@@ -341,28 +341,57 @@
     <script src="js/bootstrap.min.js"></script>
 
 <script>
-    const bookDetails = {
-        "ILMU BEDAH UNTUK PERAWAT": "Written by M.A Henderson, published in 1997. A comprehensive guide for nurses in surgical practices.",
-        "Buku Saku Ilmu Penyakit Paru": "Written by Halim Danususanto, published in 2010. A pocket book covering lung diseases and their treatments.",
-        "Urologic Disorders": "Written by Mikel Gray, published in 2009. A detailed overview of urological conditions and management.",
-        "Buku Ajar Panthom Obstetri": "Written by Ida Bagus Gede Manuba, published in 2010. A reference book on obstetrics and gynecology.",
-        "Endokrinologi Umum": "Written by Turner, published in 1988. A comprehensive text on endocrinology for medical students."
-    };
+   const bookDetails = {
+    "ILMU BEDAH UNTUK PERAWAT": {
+        author: "M.A Henderson",
+        year: 1997,
+        description: "A comprehensive guide for nurses in surgical practices."
+    },
+    "Buku Saku Ilmu Penyakit Paru": {
+        author: "Halim Danususanto",
+        year: 2010,
+        description: "A pocket book covering lung diseases and their treatments."
+    },
+    "Urologic Disorders": {
+        author: "Mikel Gray",
+        year: 2009,
+        description: "A detailed overview of urological conditions and management."
+    },
+    "Buku Ajar Panthom Obstetri": {
+        author: "Ida Bagus Gede Manuba",
+        year: 2010,
+        description: "A reference book on obstetrics and gynecology."
+    },
+    "Endokrinologi Umum": {
+        author: "Turner",
+        year: 1988,
+        description: "A comprehensive text on endocrinology for medical students."
+    }
+};
 
-    const detailButtons = document.querySelectorAll('.details-btn');
+const detailButtons = document.querySelectorAll('.details-btn');
+const detailDiv = document.getElementById('book-detail');
 
-    detailButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const bookTitle = this.previousElementSibling.textContent; 
-            const detailDiv = document.getElementById('book-detail');
-
-            if (bookDetails[bookTitle]) {
-                detailDiv.innerHTML = `<h4>Detail Buku:</h4><p>${bookDetails[bookTitle]}</p>`;
-            } else {
-                detailDiv.innerHTML = `<p>Detail untuk buku ini tidak tersedia.</p>`;
-            }
-        });
+detailButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const bookTitle = this.previousElementSibling.textContent; 
+        
+        if (bookDetails[bookTitle]) {
+            const { author, year, description } = bookDetails[bookTitle];
+            detailDiv.innerHTML = `
+                <h4>Detail Buku: ${bookTitle}</h4>
+                <p><strong>Penulis:</strong> ${author}</p>
+                <p><strong>Tahun Terbit:</strong> ${year}</p>
+                <p><strong>Deskripsi:</strong> ${description}</p>
+            `;
+            detailDiv.style.display = 'block';
+        } else {
+            detailDiv.innerHTML = `<p>Detail untuk buku ini tidak tersedia.</p>`;
+            detailDiv.style.display = 'block';
+        }
+        detailDiv.classList.add('show-detail');
     });
+});
 </script>
     
 </body>
