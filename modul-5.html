@@ -8,10 +8,11 @@
     <style>
         body {
             background-image: url('https://img.freepik.com/free-photo/blue-acrylic-texture-background_53876-101912.jpg?ga=GA1.1.1628544991.1728095381&semt=ais_hybrid');
-            background-size: cover; 
-            background-position: center; 
+            background-size: cover;
+            background-position: center;
             color: #333;
             line-height: 1.6;
+            font-family: Arial, sans-serif;
         }
         header {
             text-align: center;
@@ -28,12 +29,35 @@
         h2 {
             color: #d9534f;
         }
+        .content p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .content h3 {
+            color: #007bff;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .content li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .highlight {
+            color: #d9534f;
+        }
         footer {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 10px;
             position: relative;
             bottom: 0;
             width: 100%;
+            text-align: center;
         }
     </style>
 </head>
@@ -44,33 +68,34 @@
 </header>
 
 <section>
-    <h2>Contoh Menampilkan Data dalam JavaScript</h2>
+    <div class="content">
+        <h2>Penggunaan JavaScript untuk Menampilkan Data</h2>
 
-    <p>Buka konsol browser untuk melihat hasil dari <strong>console.log()</strong>, <strong>prompt()</strong>, dan <strong>console.table()</strong>.</p>
+        <h3>1. Menggunakan <span class="highlight">console.log()</span></h3>
+        <p>
+            Ini adalah cara yang paling sering digunakan oleh developer untuk menampilkan data di konsol browser. 
+            Fungsinya lebih untuk debugging daripada menampilkan data langsung ke pengguna. 
+            Untuk melihat hasilnya, Anda bisa membuka Konsol di alat pengembang browser 
+            (biasanya dengan menekan F12 atau Ctrl + Shift + I di browser).
+        </p>
+
+        <h3>2. Menggunakan <span class="highlight">prompt()</span></h3>
+        <p>
+            <span class="highlight">prompt()</span> akan menampilkan jendela dialog kepada pengguna yang memungkinkan mereka 
+            untuk memasukkan data, lalu mengembalikan input tersebut.
+        </p>
+
+        <h3>3. Menggunakan <span class="highlight">console.table()</span></h3>
+        <p>
+            Jika Anda ingin menampilkan data dalam bentuk tabel (misalnya array atau objek), Anda bisa menggunakan 
+            <span class="highlight">console.table()</span> untuk memvisualisasikan data dalam format tabel di konsol.
+        </p>
+    </div>
 </section>
 
 <footer>
     <p>&copy; 2024 Perpustakaan INKES</p>
 </footer>
 
-<script>
-    // 1. Menggunakan console.log() untuk menampilkan pesan di konsol
-    console.log("Selamat datang di Perpustakaan INKES!");
-
-    // 2. Menggunakan prompt() untuk meminta input dari pengguna
-    let namaPengguna = prompt("Masukkan nama Anda:");
-    console.log("Nama pengguna: " + namaPengguna);
-
-    // 3. Menggunakan console.table() untuk menampilkan data dalam format tabel
-    let bukuPerpustakaan = [
-        { judul: "JavaScript Dasar", penulis: "John Doe", tahun: 2020 },
-        { judul: "CSS untuk Pemula", penulis: "Jane Smith", tahun: 2019 },
-        { judul: "HTML Modern", penulis: "Robert Brown", tahun: 2021 }
-    ];
-
-    console.table(bukuPerpustakaan);
-</script>
-
 </body>
 </html>
-
