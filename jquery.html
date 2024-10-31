@@ -28,6 +28,52 @@
     <div id="dialog" title="Konfirmasi">
         <p>Apakah Anda yakin ingin menambahkan buku ini?</p>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            const books = [];
+
+            $("#dialog").dialog({
+                autoOpen: false,
+                modal: true,
+                buttons: {
+                    "Ya": function() {
+                        const title = $("#book-title").val();
+                        const author = $("#book-author").val();
+                        books.push({ title, author });
+                        displayBooks();
+                        $(this).dialog("close");
+                        clearInputs();
+                    },
+                    "Tidak": function() {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+            $("#add-button").on("click", function() {
+                const title = $("#book-title").val();
+                const author = $("#book-author").val();
+
+                if (title && author) {
+                    $("#dialog").dialog("open");
+                } else {
+                    alert("Judul dan pengarang harus diisi!");
+                }
+            });
+
+            function displayBooks() {
+                $("#books").empty();
+                books.forEach((book) => {
+                    $("#books").append(`<li>${book.title} oleh ${book.author}</li>`);
+                });
+            }
+
+            function clearInputs() {
+                $("#book-title").val('');
+                $("#book-author").val('');
+            }
+        });
+    </script>
 </body>
 </html>
