@@ -92,7 +92,9 @@
         }
     </style>
 </head>
-<body>
+<body> 
+    <div id="navbar-placeholder"></div>
+    
     <header style="background-image: url('picture/2112.q702.003.S.m005.c12.library illustration.jpg'); background-size: cover; background-position: center; padding: 80px 0; color: white;">
         <div class="container text-center">
             <h1 class="display-2" style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);">Daftar Buku Perpustakaan</h1>
@@ -162,6 +164,15 @@
     <footer class="text-center">
         <p>&copy; 2024 Perpustakaan INKES</p>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+    $(function(){
+        $("#navbar-placeholder").load("navbar.html");
+    });
+    </script>
 
 </body>
 </html>
