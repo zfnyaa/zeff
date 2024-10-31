@@ -34,6 +34,10 @@
             border-radius: 4px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+        img {
+            max-width: 50px; /* Set ukuran maksimum gambar */
+            margin-right: 10px;
+        }
         input {
             margin: 5px 0;
             padding: 10px;
@@ -67,6 +71,7 @@
             <h2>Tambah Buku</h2>
             <input type="text" id="book-title" placeholder="Judul Buku" />
             <input type="text" id="book-author" placeholder="Pengarang" />
+            <input type="text" id="book-image" placeholder="URL Gambar Buku" />
             <button id="add-button">Tambah Buku</button>
         </section>
     </main>
@@ -86,7 +91,9 @@
                     "Ya": function() {
                         const title = $("#book-title").val();
                         const author = $("#book-author").val();
-                        books.push({ title, author });
+                        const image = $("#book-image").val();
+
+                        books.push({ title, author, image });
                         displayBooks();
                         $(this).dialog("close");
                         clearInputs();
@@ -101,11 +108,12 @@
             $("#add-button").on("click", function() {
                 const title = $("#book-title").val();
                 const author = $("#book-author").val();
+                const image = $("#book-image").val();
 
-                if (title && author) {
+                if (title && author && image) {
                     $("#dialog").dialog("open");
                 } else {
-                    alert("Judul dan pengarang harus diisi!");
+                    alert("Judul, pengarang, dan URL gambar harus diisi!");
                 }
             });
 
@@ -113,7 +121,12 @@
             function displayBooks() {
                 $("#books").empty();
                 books.forEach((book) => {
-                    $("#books").append(`<li>${book.title} oleh ${book.author}</li>`);
+                    $("#books").append(`
+                        <li>
+                            <img src="${book.image}" alt="${book.title}">
+                            ${book.title} oleh ${book.author}
+                        </li>
+                    `);
                 });
             }
 
@@ -121,6 +134,7 @@
             function clearInputs() {
                 $("#book-title").val('');
                 $("#book-author").val('');
+                $("#book-image").val('');
             }
         });
     </script>
