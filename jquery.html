@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Kita</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Perpustakaan Kita</h1>
+    </header>
+    <main>
+        <section id="book-list">
+            <h2>Daftar Buku</h2>
+            <ul id="books"></ul>
+        </section>
+        <section id="add-book">
+            <h2>Tambah Buku</h2>
+            <input type="text" id="book-title" placeholder="Judul Buku" />
+            <input type="text" id="book-author" placeholder="Pengarang" />
+            <button id="add-button">Tambah Buku</button>
+        </section>
+    </main>
+    <div id="dialog" title="Konfirmasi">
+        <p>Apakah Anda yakin ingin menambahkan buku ini?</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
