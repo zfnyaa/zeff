@@ -71,7 +71,6 @@
             <h2>Tambah Buku</h2>
             <input type="text" id="book-title" placeholder="Judul Buku" />
             <input type="text" id="book-author" placeholder="Pengarang" />
-            <input type="text" id="book-image" placeholder="URL Gambar Buku" />
             <button id="add-button">Tambah Buku</button>
         </section>
     </main>
@@ -82,6 +81,7 @@
     <script>
         $(document).ready(function() {
             const books = [];
+            const defaultImage = "https://via.placeholder.com/50"; // Gambar default
 
             // Inisialisasi dialog jQuery UI
             $("#dialog").dialog({
@@ -91,9 +91,9 @@
                     "Ya": function() {
                         const title = $("#book-title").val();
                         const author = $("#book-author").val();
-                        const image = $("#book-image").val();
 
-                        books.push({ title, author, image });
+                        // Menggunakan gambar default jika tidak ada URL gambar
+                        books.push({ title, author, image: defaultImage });
                         displayBooks();
                         $(this).dialog("close");
                         clearInputs();
@@ -108,12 +108,11 @@
             $("#add-button").on("click", function() {
                 const title = $("#book-title").val();
                 const author = $("#book-author").val();
-                const image = $("#book-image").val();
 
-                if (title && author && image) {
+                if (title && author) {
                     $("#dialog").dialog("open");
                 } else {
-                    alert("Judul, pengarang, dan URL gambar harus diisi!");
+                    alert("Judul dan pengarang harus diisi!");
                 }
             });
 
@@ -134,9 +133,9 @@
             function clearInputs() {
                 $("#book-title").val('');
                 $("#book-author").val('');
-                $("#book-image").val('');
             }
         });
     </script>
 </body>
 </html>
+
