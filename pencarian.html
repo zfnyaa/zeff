@@ -100,3 +100,121 @@
     </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Buku</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #search {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 300px;
+        }
+
+        #book-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .book-title {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            margin: 10px 0;
+        }
+
+        .book-details {
+            display: none; 
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        #book-details img {
+            width: 100px; 
+            height: auto; 
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Koleksi Buku</h1>
+    <input type="text" id="search" placeholder="Cari buku..." />
+    <ul id="book-list">
+        <li>
+            <div class="book-title" data-title="ILMU BEDAH UNTUK PERAWAT">ILMU BEDAH UNTUK PERAWAT</div>
+            <div class="book-details" id="details-ilmu-bedah-untuk-perawat">
+                <img src="picture/sg-11134201-22120-9biv1it498kved.jpeg" alt="ILMU BEDAH UNTUK PERAWAT">
+                <div>
+                    <strong>Penulis:</strong>M.A HENDERSON<br>
+                    <strong>Tahun Terbit:</strong> 1997
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="book-title" data-title="Buku Saku Ilmu Penyakit Paru">Buku Saku Ilmu Penyakit Paru</div>
+            <div class="book-details" id="details-buku-saku-ilmu-penyakit-paru">
+                <img src="picture/e271b293-6160-47b7-8901-83e022fc4b46.jpeg" alt="Buku Saku Ilmu Penyakit Paru">
+                <div>
+                    <strong>Penulis:</strong> Halim Danususanto<br>
+                    <strong>Tahun Terbit:</strong> 2010
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="book-title" data-title="Urologic Disorders">Urologic Disorders</div>
+            <div class="book-details" id="details-urologic-disorders">
+                <img src="picture/e8360039-3aad-476d-b62f-f5fac1d0dae8.jpeg" alt="Urologic Disorders">
+                <div>
+                    <strong>Penulis:</strong> FMikel Gray<br>
+                    <strong>Tahun Terbit:</strong> 2009
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="book-title" data-title="Buku Ajar Panthom Obstetri">Buku Ajar Panthom Obstetri</div>
+            <div class="book-details" id="details-buku-ajar-panthom-obstetri">
+                <img src="picture/Buku Ajar Panthom Obstetri REVISI.jpg" alt="Buku Ajar Panthom Obstetri">
+                <div>
+                    <strong>Penulis:</strong> Ida Bagus Gede Manuba	<br>
+                    <strong>Tahun Terbit:</strong> 2010
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="book-title" data-title="Endokrinologi Umum">Endokrinologi Umum</div>
+            <div class="book-details" id="details-edrokrinologi-umum">
+                <img src="picture/baf16796-fb4d-47cf-adca-d075a9d08b1e.jpeg" alt="Endokrinologi Umum">
+                <div>
+                    <strong>Penulis:</strong> Turner <br>
+                    <strong>Tahun Terbit:</strong> 1988
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#search').on('keyup', function() {
+                var query = $(this).val().toLowerCase();
+                $('#book-list li').filter(function() {
+                    $(this).toggle($(this).find('.book-title').text().toLowerCase().indexOf(query) > -1);
+                });
+            });
+
+            $('.book-title').on('click', function() {
+                var detailsId = 'details-' + $(this).data('title').toLowerCase().replace(/[^a-z]/g, '-');
+                $('#' + detailsId).toggle(); 
+            });
+        });
+    </script>
+</body>
+</html>
+
