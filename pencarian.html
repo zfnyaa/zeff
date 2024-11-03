@@ -41,10 +41,16 @@
     #search {
         margin-bottom: 20px;
         padding: 10px;
-        width: 100%; /* Lebar penuh */
+        width: 100%; 
         border: 1px solid #ccc;
         border-radius: 5px;
         font-size: 16px;
+        transition: border-color 0.3s;
+    }
+
+    #search:focus {
+        border-color: #d9534f; 
+        outline: none; 
     }
 
     #book-list {
@@ -67,6 +73,11 @@
     .book-title:hover {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
         transform: scale(1.03);
+    }
+
+    .highlight {
+        background-color: #d9534f; 
+        color: white; 
     }
 
     .book-details {
@@ -159,8 +170,16 @@
         $(document).ready(function() {
             $('#search').on('keyup', function() {
                 var query = $(this).val().toLowerCase();
-                $('#book-list li').filter(function() {
-                    $(this).toggle($(this).find('.book-title').text().toLowerCase().indexOf(query) > -1);
+                $('#book-list li').each(function() {
+                    var titleElement = $(this).find('.book-title');
+                    var titleText = titleElement.text().toLowerCase();
+                    if (titleText.indexOf(query) > -1) {
+                        $(this).show();
+                        titleElement.addClass('highlight'); 
+                    } else {
+                        $(this).hide();
+                        titleElement.removeClass('highlight'); 
+                    }
                 });
             });
 
