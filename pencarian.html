@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Koleksi Buku</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Pencarian Koleksi Buku</h1>
+<input type="text" id="search" placeholder="Cari buku...">
+
+<table id="bookTable">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Judul</th>
+            <th>Pengarang</th>
+            <th>Penerbit</th>
+            <th>Tahun</th>
+            <th>Halaman</th>
+            <th>ISBN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>ILMU BEDAH UNTUK PERAWAT</td>
+            <td>M.A HENDERSON</td>
+            <td>YAYASAN ESSENTIA MEDICA</td>
+            <td>1997</td>
+            <td>290</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Buku Saku Ilmu Penyakit Paru</td>
+            <td>Halim Danususanto</td>
+            <td>Penerbit Buku Kedokteran</td>
+            <td>2010</td>
+            <td>335</td>
+            <td>978-979-044-256-6</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Urologic Disorders</td>
+            <td>Mikel Gray</td>
+            <td>Morgan Kaufmann Publisher</td>
+            <td>2009</td>
+            <td>506</td>
+            <td>978-0-323-01912-5</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Buku Ajar Panthom Obstetri</td>
+            <td>Ida Bagus Gede Manuba</td>
+            <td>Touchstone Book</td>
+            <td>2010</td>
+            <td>131</td>
+            <td>978-602-8200-88-2</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Endokrinologi Umum</td>
+            <td>Turner</td>
+            <td>Airlangga University Press</td>
+            <td>1988</td>
+            <td>746</td>
+            <td>-</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+$(document).ready(function() {
+    $("#search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#bookTable tbody tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+});
+</script>
+
+</body>
+</html>
