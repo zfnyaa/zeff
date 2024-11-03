@@ -38,19 +38,32 @@
         width: 100%;
     }
 
-    #search {
+    #search-container {
+        position: relative;
         margin-bottom: 20px;
-        padding: 10px;
+    }
+
+    #search {
+        padding: 10px 40px; /* Memberikan ruang untuk ikon */
         width: 100%; 
         border: 1px solid #ccc;
-        border-radius: 5px;
+        border-radius: 25px; /* Membuat sudut melengkung */
         font-size: 16px;
-        transition: border-color 0.3s;
+        transition: border-color 0.3s, box-shadow 0.3s;
     }
 
     #search:focus {
-        border-color: #d9534f; 
-        outline: none; 
+        border-color: #d9534f; /* Mengubah warna border saat fokus */
+        box-shadow: 0 0 5px rgba(217, 83, 79, 0.5); /* Efek bayangan saat fokus */
+        outline: none; /* Menghilangkan outline default */
+    }
+
+    #search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #d9534f;
     }
 
     #book-list {
@@ -73,11 +86,6 @@
     .book-title:hover {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
         transform: scale(1.03);
-    }
-
-    .highlight {
-        background-color: #d9534f; 
-        color: white; 
     }
 
     .book-details {
@@ -105,7 +113,10 @@
 
     <section>
         <h2>Koleksi Buku</h2>
-        <input type="text" id="search" placeholder="Cari buku..." />
+        <div id="search-container">
+            <i id="search-icon" class="fas fa-search"></i>
+            <input type="text" id="search" placeholder="Cari buku..." />
+        </div>
         <ul id="book-list">
             <li>
                 <div class="book-title" data-title="ILMU BEDAH UNTUK PERAWAT">ILMU BEDAH UNTUK PERAWAT</div>
@@ -161,7 +172,8 @@
     </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
 
     <script>
         $(function(){
@@ -170,16 +182,8 @@
         $(document).ready(function() {
             $('#search').on('keyup', function() {
                 var query = $(this).val().toLowerCase();
-                $('#book-list li').each(function() {
-                    var titleElement = $(this).find('.book-title');
-                    var titleText = titleElement.text().toLowerCase();
-                    if (titleText.indexOf(query) > -1) {
-                        $(this).show();
-                        titleElement.addClass('highlight'); 
-                    } else {
-                        $(this).hide();
-                        titleElement.removeClass('highlight'); 
-                    }
+                $('#book-list li').filter(function() {
+                    $(this).toggle($(this).find('.book-title').text().toLowerCase().indexOf(query) > -1);
                 });
             });
 
