@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan INKES</title>
-     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Navbar dengan gradasi dan transparansi */
         .navbar {
-            background-color: #343a40; 
+            background: rgba(255, 255, 255, 0.8); /* Transparan putih */
+            background: linear-gradient(45deg, #f44336, #e91e63); /* Gradasi merah */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus */
         }
 
         .navbar-brand {
             display: flex;
             align-items: center;
-            color: white; 
+            color: white;
         }
 
         .navbar-brand img {
@@ -28,27 +31,13 @@
             font-weight: 500;
         }
 
-       
         .navbar-nav > li > a:hover {
-            background-color: #e74c3c;
+            background-color: rgba(255, 255, 255, 0.3);
             border-radius: 5px;
         }
 
         .navbar-toggle .icon-bar {
             background-color: white;
-        }
-
-        .dropdown-menu {
-            background-color: #343a40; 
-            border: none;
-        }
-
-        .dropdown-menu .dropdown-item {
-            color: white;
-        }
-
-        .dropdown-menu .dropdown-item:hover {
-            background-color: #e74c3c; 
         }
     </style>
 </head>
@@ -96,8 +85,9 @@
     </div>
 </nav>
 
-
+<!-- Bootstrap 3.3.7 JS & jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>
