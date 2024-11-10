@@ -14,19 +14,23 @@
             line-height: 1.6;
         }
         header {
-            text-align: center;
+            text-align: left; /* Menjadikan teks rata kiri */
             color: red;
             margin: 20px 0;
+            padding-left: 30px; /* Memberi padding di kiri agar teks tidak terlalu rapat ke tepi */
         }
+
         header h1 {
-            font-size: 4rem;  /* Membesarkan ukuran teks */
+            font-size: 5rem;  /* Membesarkan ukuran teks */
             text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
             animation: slideInFromLeft 2s ease-out;  /* Menambahkan animasi pada teks */
+            margin-bottom: 0; /* Menghilangkan margin bawah pada h1 */
         }
 
         header h2 {
             font-size: 1.5rem;  /* Ukuran font lebih kecil untuk h2 */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            padding-left: 30px; /* Memberikan padding kiri agar rata dengan h1 */
         }
 
         @keyframes slideInFromLeft {
@@ -118,7 +122,7 @@
    <div id="navbar-placeholder"></div>
     
     <header style="background-image: url('picture/smiling-female-doctor-physican-medical-uniform-sterile-gloves-pointing-fingers-left-promo.jpg'); background-size: cover; background-position: center; padding: 80px 0; color: white;">
-        <div class="container text-center">
+        <div class="container text-left"> <!-- Ubah text-center ke text-left untuk rata kiri -->
             <h1 class="display-2">Perpustakaan INKES</h1>
             <h2 class="lead">Selamat Datang di Web Perpustakaan INKES</h2>
         </div>
