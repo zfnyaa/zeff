@@ -4,48 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar Keren</title>
+    <title>Navbar Elegan</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Navbar Background Gradient */
+        /* Navbar Background Putih */
         .navbar {
-            background: linear-gradient(45deg, #00b4d8, #4b9cd3); /* Ganti warna sesuai selera */
+            background-color: #fff;  /* Warna putih untuk navbar */
             border: none;
             border-radius: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
         }
+
         /* Navbar Teks */
         .navbar-brand, .navbar-nav > li > a {
-            color: #fff !important;
+            color: #333 !important;
             font-size: 16px;
+            font-weight: 500;
             text-transform: uppercase;
-            font-weight: bold;
         }
-        /* Navbar Logo */
+
+        /* Navbar Hover */
+        .navbar-nav > li > a:hover {
+            color: #007bff !important;  /* Ubah warna menjadi biru saat hover */
+            background-color: transparent;  /* Pastikan background tetap transparan */
+            transition: color 0.3s ease;
+        }
+
+        /* Dropdown Menu */
+        .navbar-nav > .dropdown > a:focus, .navbar-nav > .dropdown > a:hover {
+            color: #007bff !important;
+            background-color: transparent !important;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu > li > a:hover {
+            background-color: #f8f9fa;  /* Warna latar belakang saat hover */
+            color: #007bff;
+        }
+
+        /* Navbar Brand - Logo */
         .navbar-brand img {
             height: 40px;
             margin-right: 10px;
-            transition: transform 0.3s ease;
         }
-        /* Navbar Hover Animation */
-        .navbar-nav > li > a:hover {
-            color: #ffeb3b !important;
-            background-color: rgba(255, 255, 255, 0.2); /* Efek hover dengan transparansi */
-            transition: all 0.3s ease;
-        }
-        /* Dropdown Hover */
-        .dropdown-menu > li > a:hover {
-            background-color: #4b9cd3;
-            color: #fff;
-        }
-        /* Navbar Toggle Button (Hamburger Menu) */
+
+        /* Navbar Toggle Button */
         .navbar-toggle .icon-bar {
-            background-color: #fff;
+            background-color: #333;
         }
-        /* Transisi logo */
-        .navbar-brand:hover img {
-            transform: rotate(360deg);
-        }
+
     </style>
 </head>
 <body>
