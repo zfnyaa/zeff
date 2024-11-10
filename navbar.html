@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan INKES</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Navbar dengan gradasi dan transparansi */
-        .navbar {
-            background: rgba(255, 255, 255, 0.8); /* Transparan putih */
-            background: linear-gradient(45deg, #f44336, #e91e63); /* Gradasi merah */
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus */
-        }
-
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        .navbar-nav > li > a {
-            color: white !important;
-            padding-left: 20px;
-            padding-right: 20px;
-            font-weight: 500;
-        }
-
-        .navbar-nav > li > a:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 5px;
-        }
-
-        .navbar-toggle .icon-bar {
-            background-color: white;
-        }
-    </style>
-</head>
-<body>
-
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarNav">
@@ -51,8 +6,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">
-                <img src="picture/2.png" alt="Logo INKES">
+            <a class="navbar-brand" href="index.html" style="display: flex; align-items: center;">
+                <img src="picture/2.png" alt="Logo INKES" style="height: 40px; margin-right: 10px;">
                 <span>Perpustakaan INKES</span>
             </a>
         </div>
@@ -83,11 +38,4 @@
             </ul>
         </div>
     </div>
-</nav>
-
-<!-- Bootstrap 3.3.7 JS & jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</body>
-</html>
+</nav>  
