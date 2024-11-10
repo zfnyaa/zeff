@@ -4,55 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Perpustakaan INKES - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Menambahkan font Poppins -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
-         body {
+        body {
             background-image: url('https://img.freepik.com/free-photo/blue-acrylic-texture-background_53876-101912.jpg?ga=GA1.1.1628544991.1728095381&semt=ais_hybrid');
             background-size: cover; 
             background-position: center; 
             color: #333;
             line-height: 1.6;
+            font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins */
         }
+
         header {
-            text-align: left; /* Teks rata kiri */
+            text-align: left;
             color: red;
             margin: 20px 0;
-            padding-left: 50px; /* Memberikan padding lebih banyak agar teks lebih ke kiri */
-            position: relative; /* Untuk posisi animasi */
+            padding-left: 80px; /* Menambah padding kiri untuk posisi lebih ke kiri */
+            position: relative;
+            padding-top: 100px; /* Menambah jarak atas agar tidak terlalu rapat dengan tepi */
         }
 
         header h1 {
-            font-size: 5rem;  /* Ukuran font lebih besar */
+            font-size: 6rem;  /* Membesarkan ukuran teks */
+            color: black; /* Mengubah warna teks h1 menjadi hitam */
             text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
-            animation: slideInFromTop 2s ease-out;  /* Animasi muncul dari atas */
-            margin-bottom: 0; /* Menghilangkan margin bawah pada h1 */
+            animation: slideInFromTop 2s ease-out;
+            margin-bottom: 0;
         }
 
         header h2 {
-            font-size: 1.5rem;  /* Ukuran font untuk h2 */
+            font-size: 2rem;  /* Ukuran font lebih besar untuk h2 */
+            color: black; /* Mengubah warna teks h2 menjadi hitam */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            padding-left: 50px; /* Rata kiri dengan h1 */
-            animation: slideInFromBottom 2s ease-out; /* Animasi muncul dari bawah */
+            padding-left: 80px; /* Mengatur agar rata kiri dengan h1 */
+            animation: slideInFromBottom 2s ease-out;
         }
 
         @keyframes slideInFromTop {
             0% {
-                transform: translateY(-100%);  /* Mulai dari atas */
+                transform: translateY(-100%);
                 opacity: 0;
             }
             100% {
-                transform: translateY(0);  /* Berhenti di posisi normal */
+                transform: translateY(0);
                 opacity: 1;
             }
         }
 
         @keyframes slideInFromBottom {
             0% {
-                transform: translateY(100%);  /* Mulai dari bawah */
+                transform: translateY(100%);
                 opacity: 0;
             }
             100% {
-                transform: translateY(0);  /* Berhenti di posisi normal */
+                transform: translateY(0);
                 opacity: 1;
             }
         }
@@ -77,7 +83,7 @@
             max-width: 100%; 
             height: auto; 
             margin: 10px 0;
-        } 
+        }
 
         .book-item {
             display: flex;
@@ -86,10 +92,10 @@
         }
 
         .book-item img {
-            width: 100px; 
-            height: 150px; 
+            width: 120px;  /* Membesarkan gambar sedikit */
+            height: 180px; 
             margin-right: 15px;
-            object-fit: cover; 
+            object-fit: cover;
         }
 
         .details-btn {
@@ -108,7 +114,7 @@
 
         .details-btn:hover {
             background-color: #0056b3;
-            transform: translateY(-2px); 
+            transform: translateY(-2px);
         }
 
         #book-detail {
@@ -118,6 +124,7 @@
             border-radius: 5px;
             background: #f9f9f9;
         }
+
         #book-detail {
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
             opacity: 0;
@@ -133,7 +140,7 @@
 <body>
    <div id="navbar-placeholder"></div>
     
-    <header style="background-image: url('picture/smiling-female-doctor-physican-medical-uniform-sterile-gloves-pointing-fingers-left-promo.jpg'); background-size: cover; background-position: center; padding: 80px 0; color: white;">
+    <header style="background-image: url('picture/smiling-female-doctor-physican-medical-uniform-sterile-gloves-pointing-fingers-left-promo.jpg'); background-size: cover; background-position: center; padding: 100px 0; color: white;">
         <div class="container text-left"> <!-- Teks rata kiri -->
             <h1 class="display-2">Perpustakaan INKES</h1>
             <h2 class="lead">Selamat Datang di Web Perpustakaan INKES</h2>
