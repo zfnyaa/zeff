@@ -18,6 +18,28 @@
             color: red;
             margin: 20px 0;
         }
+        header h1 {
+            font-size: 4rem;  /* Membesarkan ukuran teks */
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+            animation: slideInFromLeft 2s ease-out;  /* Menambahkan animasi pada teks */
+        }
+
+        header h2 {
+            font-size: 1.5rem;  /* Ukuran font lebih kecil untuk h2 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);  /* Mulai dari kiri layar */
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);  /* Berhenti di posisi normal */
+                opacity: 1;
+            }
+        }
+
         section {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
@@ -81,14 +103,14 @@
             background: #f9f9f9;
         }
         #book-detail {
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        opacity: 0;
-        transform: translateY(20px);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
         }
 
         #book-detail.show-detail {
-        opacity: 1;
-        transform: translateY(0);
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -97,8 +119,8 @@
     
     <header style="background-image: url('picture/smiling-female-doctor-physican-medical-uniform-sterile-gloves-pointing-fingers-left-promo.jpg'); background-size: cover; background-position: center; padding: 80px 0; color: white;">
         <div class="container text-center">
-            <h1 class="display-2" style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);">Perpustakaan INKES</h1>
-            <h2 class="lead" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Selamat Datang di Web Perpustakaan INKES</h2>
+            <h1 class="display-2">Perpustakaan INKES</h1>
+            <h2 class="lead">Selamat Datang di Web Perpustakaan INKES</h2>
         </div>
     </header>
     <main class="container">
@@ -112,11 +134,10 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-<script>
-    $(function(){
-        $("#navbar-placeholder").load("navbar.html");
-    });
-</script>
-    
+    <script>
+        $(function(){
+            $("#navbar-placeholder").load("navbar.html");
+        });
+    </script>
 </body>
 </html>
