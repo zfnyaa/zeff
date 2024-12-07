@@ -49,7 +49,7 @@
         </div>
     </header>
     
-    <h2>Belajar PHP</h2>
+    <h2>Daftar Hari Belajar PHP</h2>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
