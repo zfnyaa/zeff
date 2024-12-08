@@ -25,28 +25,27 @@
             border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
-        h2 {
-            color: #d9534f;
-        }
-        footer {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px;
+        .gallery-container {
             position: relative;
-            bottom: 0;
+            overflow: hidden;
             width: 100%;
         }
-        .carousel-inner > .item {
-            text-align: center;
+        .book-gallery {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
         }
-        .carousel-inner > .item .book-item {
-            display: inline-block;
-            width: 300px;
-            margin: 0 auto;
+        .book-item {
+            flex: 0 0 300px;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
         }
         .book-item img {
             max-width: 100%;
             border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         .book-item h4 {
             margin-top: 10px;
@@ -55,6 +54,24 @@
         .book-item p {
             font-size: 1rem;
             color: #666;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .nav-button.left {
+            left: 10px;
+        }
+        .nav-button.right {
+            right: 10px;
         }
     </style>
 </head>
@@ -67,83 +84,63 @@
     <main class="container">
         <section id="pameran">
             <h3 class="text-center">Pameran Buku</h3>
-            <div id="bookCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#bookCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#bookCarousel" data-slide-to="1"></li>
-                    <li data-target="#bookCarousel" data-slide-to="2"></li>
-                    <li data-target="#bookCarousel" data-slide-to="3"></li>
-                    <li data-target="#bookCarousel" data-slide-to="4"></li>
-                    <li data-target="#bookCarousel" data-slide-to="5"></li>
-                </ol>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <!-- Buku 1 -->
-                    <div class="item active">
-                        <div class="book-item">
-                            <img src="picture/pameran-6.jpg" alt="Pertolongan Pertama untuk Setiap Orang">
-                            <h4>Pertolongan Pertama untuk Setiap Orang</h4>
-                            <p>Juan P. Sanchez</p>
-                        </div>
+            <div class="gallery-container">
+                <button class="nav-button left" onclick="scrollGallery(-1)">&#8249;</button>
+                <div class="book-gallery" id="bookGallery">
+                    <div class="book-item">
+                        <img src="picture/pameran-6.jpg" alt="Pertolongan Pertama untuk Setiap Orang">
+                        <h4>Pertolongan Pertama untuk Setiap Orang</h4>
+                        <p>Juan P. Sanchez</p>
                     </div>
-                    <!-- Buku 2 -->
-                    <div class="item">
-                        <div class="book-item">
-                            <img src="picture/pameran-1.jpg" alt="Penyakit Tiroid">
-                            <h4>Penyakit Tiroid</h4>
-                            <p>dr. Hans Tandra</p>
-                        </div>
+                    <div class="book-item">
+                        <img src="picture/pameran-1.jpg" alt="Penyakit Tiroid">
+                        <h4>Penyakit Tiroid</h4>
+                        <p>dr. Hans Tandra</p>
                     </div>
-                    <!-- Buku 3 -->
-                    <div class="item">
-                        <div class="book-item">
-                            <img src="picture/pameran-2.jpg" alt="Kolesterol dan Trigliserida">
-                            <h4>Kolesterol dan Trigliserida</h4>
-                            <p>dr. Hans Tandra</p>
-                        </div>
+                    <div class="book-item">
+                        <img src="picture/pameran-2.jpg" alt="Kolesterol dan Trigliserida">
+                        <h4>Kolesterol dan Trigliserida</h4>
+                        <p>dr. Hans Tandra</p>
                     </div>
-                    <!-- Buku 4 -->
-                    <div class="item">
-                        <div class="book-item">
-                            <img src="picture/pameran-3.jpg" alt="Mengendalikan Asam Urat">
-                            <h4>Mengendalikan Asam Urat</h4>
-                            <p>dr. Hans Tandra</p>
-                        </div>
+                    <div class="book-item">
+                        <img src="picture/pameran-3.jpg" alt="Mengendalikan Asam Urat">
+                        <h4>Mengendalikan Asam Urat</h4>
+                        <p>dr. Hans Tandra</p>
                     </div>
-                    <!-- Buku 5 -->
-                    <div class="item">
-                        <div class="book-item">
-                            <img src="picture/pameran-4.jpg" alt="Diabetes Bisa Sembuh">
-                            <h4>Diabetes Bisa Sembuh</h4>
-                            <p>dr. Hans Tandra</p>
-                        </div>
+                    <div class="book-item">
+                        <img src="picture/pameran-4.jpg" alt="Diabetes Bisa Sembuh">
+                        <h4>Diabetes Bisa Sembuh</h4>
+                        <p>dr. Hans Tandra</p>
                     </div>
-                    <!-- Buku 6 -->
-                    <div class="item">
-                        <div class="book-item">
-                            <img src="picture/pameran-5.jpg" alt="Hati-hati dengan Hati">
-                            <h4>Hati-hati dengan Hati</h4>
-                            <p>dr. Hans Tandra</p>
-                        </div>
+                    <div class="book-item">
+                        <img src="picture/pameran-5.jpg" alt="Hati-hati dengan Hati">
+                        <h4>Hati-hati dengan Hati</h4>
+                        <p>dr. Hans Tandra</p>
                     </div>
                 </div>
-                <!-- Controls -->
-                <a class="left carousel-control" href="#bookCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#bookCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <button class="nav-button right" onclick="scrollGallery(1)">&#8250;</button>
             </div>
         </section>
     </main>
     <footer class="text-center">
         <p>&copy; 2024 Perpustakaan INKES</p>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script>
+        const gallery = document.getElementById('bookGallery');
+        let scrollPosition = 0;
+
+        function scrollGallery(direction) {
+            const itemWidth = 300 + 20; // Width of .book-item + margin
+            const visibleItems = Math.floor(gallery.parentElement.offsetWidth / itemWidth);
+            const maxScroll = (gallery.children.length - visibleItems) * itemWidth;
+
+            scrollPosition += direction * itemWidth;
+
+            // Prevent scrolling past the start or end
+            scrollPosition = Math.max(0, Math.min(scrollPosition, maxScroll));
+
+            gallery.style.transform = `translateX(-${scrollPosition}px)`;
+        }
+    </script>
 </body>
 </html>
