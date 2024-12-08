@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Kalkulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .result {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hasil Kalkulator</h1>
+    <div class="result" id="result"></div>
+
+    <script>
+        // Fungsi untuk mendapatkan nilai query string
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Ambil nilai dari query string
+        const num1 = parseFloat(getQueryParam("num1"));
+        const num2 = parseFloat(getQueryParam("num2"));
+        const operation = getQueryParam("operation");
+
+        let result;
+
+        // Hitung berdasarkan operasi yang dipilih
+        switch (operation) {
+            case "add":
+                result = num1 + num2;
+                break;
+            case "subtract":
+                result = num1 - num2;
+                break;
+            case "multiply":
+                result = num1 * num2;
+                break;
+            case "divide":
+                if (num2 === 0) {
+                    result = "Error: Tidak bisa membagi dengan 0.";
+                } else {
+                    result = num1 / num2;
+                }
+                break;
+            default:
+                result = "Operasi tidak valid.";
+        }
+
+        // Tampilkan hasil di halaman
+        document.getElementById("result").textContent = `Hasil: ${result}`;
+    </script>
+</body>
+</html>
