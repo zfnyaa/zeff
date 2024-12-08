@@ -4,10 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Perhitungan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .result-box {
+            background-color: #eaf0f1;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            border-radius: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hasil Perhitungan</h1>
-    <p id="result">Memuat hasil...</p>
+    <div class="container">
+        <h1>Hasil Perhitungan</h1>
+        
+        <div class="result-box" id="result">Memuat hasil...</div>
+
+        <button onclick="window.location.href='modul-7.html'">Kembali</button>
+    </div>
 
     <script>
         // Ambil query string dari URL
