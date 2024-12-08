@@ -86,6 +86,7 @@
     </style>
 </head>
 <body>
+    <div id="navbar-placeholder"></div>
 
     <div class="login-container">
         <h2>Halaman Login</h2>
@@ -103,38 +104,38 @@
     </div>
 
     <script>
-        // Username dan password yang benar
+        $(function(){
+            $("#navbar-placeholder").load("navbar.html");
+        });
+       
         const correctUsername = "admin";
         const correctPassword = "password123";
 
-        // Tangani pengiriman form
         document.getElementById("login-form").addEventListener("submit", function (e) {
             e.preventDefault();
 
-            // Ambil nilai username dan password
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            // Cek apakah input lengkap
             if (username === "" || password === "") {
                 showMessage("Input tidak lengkap. Silakan masukkan Username dan Password.", "warning");
             } 
-            // Cek apakah username dan password cocok
+    
             else if (username === correctUsername && password === correctPassword) {
                 showMessage("Login sukses! Selamat datang.", "success");
             } 
-            // Jika username atau password salah
+            
             else {
                 showMessage("Login gagal. Username atau password salah.", "error");
             }
         });
 
-        // Fungsi untuk menampilkan pesan
+       
         function showMessage(message, type) {
             const messageBox = document.getElementById("message");
             messageBox.textContent = message;
 
-            // Sesuaikan kelas berdasarkan tipe pesan
+            
             messageBox.className = `message ${type}`;
         }
     </script>
