@@ -3,42 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil Kalkulator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        .result {
-            font-size: 1.5rem;
-            margin-top: 20px;
-            color: #007bff;
-        }
-    </style>
+    <title>Hasil Perhitungan</title>
 </head>
 <body>
-    <h1>Hasil Kalkulator</h1>
-    <div class="result" id="result"></div>
+    <h1>Hasil Perhitungan</h1>
+    <p id="result">Memuat hasil...</p>
 
     <script>
-        // Fungsi untuk mendapatkan nilai query string
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-
-        // Ambil nilai dari query string
-        const num1 = parseFloat(getQueryParam("num1"));
-        const num2 = parseFloat(getQueryParam("num2"));
-        const operation = getQueryParam("operation");
+        // Ambil query string dari URL
+        const params = new URLSearchParams(window.location.search);
+        const num1 = parseFloat(params.get("num1"));
+        const num2 = parseFloat(params.get("num2"));
+        const operation = params.get("operation");
 
         let result;
 
-        // Hitung berdasarkan operasi yang dipilih
+        // Lakukan operasi matematika berdasarkan pilihan
         switch (operation) {
             case "add":
                 result = num1 + num2;
@@ -50,11 +30,7 @@
                 result = num1 * num2;
                 break;
             case "divide":
-                if (num2 === 0) {
-                    result = "Error: Tidak bisa membagi dengan 0.";
-                } else {
-                    result = num1 / num2;
-                }
+                result = num2 !== 0 ? num1 / num2 : "Error: Pembagian dengan 0 tidak valid.";
                 break;
             default:
                 result = "Operasi tidak valid.";
