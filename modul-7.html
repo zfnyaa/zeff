@@ -78,6 +78,38 @@
             bottom: 0;
             width: 100%;
         }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        label, select, input, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -89,6 +121,25 @@
     </header>
     
     <section id="message-section"></section>
+    <h3>Kalkulator Sederhana</h3>
+    <form id="calculator-form">
+        <label for="num1">Bilangan Pertama:</label>
+        <input type="number" id="num1" name="num1" required>
+
+        <label for="num2">Bilangan Kedua:</label>
+        <input type="number" id="num2" name="num2" required>
+
+        <label for="operation">Pilih Operasi:</label>
+        <select id="operation" name="operation" required>
+            <option value="add">Penjumlahan (+)</option>
+            <option value="subtract">Pengurangan (-)</option>
+            <option value="multiply">Perkalian (×)</option>
+            <option value="divide">Pembagian (÷)</option>
+        </select>
+
+        <button type="submit">Hitung</button>
+    </form>
+    <div class="result" id="result"></div>
 
     <footer class="text-center">
         <p>&copy; 2024 Perpustakaan INKES</p>
@@ -107,6 +158,42 @@
             paragraph.innerText = `Ini adalah hari ke-${i} belajar PHP`;
             section.appendChild(paragraph);
         }
+        // Menangani pengiriman formulir
+        document.getElementById("calculator-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Ambil nilai input dari formulir
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const operation = document.getElementById("operation").value;
+
+            let result;
+
+            // Hitung berdasarkan operasi yang dipilih
+            switch (operation) {
+                case "add":
+                    result = num1 + num2;
+                    break;
+                case "subtract":
+                    result = num1 - num2;
+                    break;
+                case "multiply":
+                    result = num1 * num2;
+                    break;
+                case "divide":
+                    if (num2 === 0) {
+                        result = "Error: Tidak bisa membagi dengan 0.";
+                    } else {
+                        result = num1 / num2;
+                    }
+                    break;
+                default:
+                    result = "Operasi tidak valid.";
+            }
+
+            // Tampilkan hasil di halaman
+            document.getElementById("result").textContent = `Hasil: ${result}`;
+        });
     </script>
 </body>
 </html>
